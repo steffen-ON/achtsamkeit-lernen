@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Achtsamkeit Lernen – Anfängerkurs</title>
+  <title>Achtsamkeit & Meditation Lernen – Anfängerkurs mit Steffen</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --sage:    #7A9E87;
-      --amber:   #C8894A;
-      --stone:   #2E2A25;
-      --linen:   #F5F0E8;
-      --paper:   #FDFAF5;
-      --mist:    #DDD8CF;
+      --sage:  #7A9E87;
+      --amber: #C8894A;
+      --stone: #2E2A25;
+      --linen: #F5F0E8;
+      --paper: #FDFAF5;
+      --mist:  #DDD8CF;
     }
 
     html { scroll-behavior: smooth; }
@@ -28,17 +28,10 @@
       line-height: 1.8;
     }
 
-    /* ── LAYOUT ── */
-    .page {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 5rem 2rem 8rem;
-    }
-
     /* ── HEADER ── */
     .site-header {
       display: flex; justify-content: space-between; align-items: center;
-      padding: 1.5rem 2rem;
+      padding: 1.4rem 2.5rem;
       border-bottom: 1px solid var(--mist);
       position: sticky; top: 0;
       background: rgba(253,250,245,0.95);
@@ -46,126 +39,146 @@
       z-index: 10;
     }
     .site-name {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.82rem; letter-spacing: 0.12em;
-      text-transform: uppercase; opacity: 0.5;
+      font-size: 0.8rem; letter-spacing: 0.12em;
+      text-transform: uppercase; opacity: 0.45;
       text-decoration: none; color: var(--stone);
     }
-    .site-nav { display: flex; gap: 2rem; }
+    .site-nav { display: flex; gap: 2rem; align-items: center; }
     .site-nav a {
-      font-size: 0.82rem; opacity: 0.45;
+      font-size: 0.8rem; opacity: 0.4;
       text-decoration: none; color: var(--stone);
       transition: opacity 0.2s;
     }
     .site-nav a:hover { opacity: 1; }
+    .nav-cta {
+      background: var(--sage) !important;
+      color: var(--paper) !important;
+      opacity: 1 !important;
+      padding: 0.5rem 1.2rem;
+      border-radius: 2rem;
+      font-size: 0.8rem !important;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--stone) !important; }
+
+    /* ── PAGE ── */
+    .page {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 5rem 2rem 8rem;
+    }
 
     /* ── INTRO ── */
-    .kurs-label {
-      font-size: 0.72rem; letter-spacing: 0.2em;
+    .greeting {
+      font-size: 0.8rem; letter-spacing: 0.14em;
       text-transform: uppercase; color: var(--sage);
-      display: block; margin-bottom: 2.5rem;
+      display: block; margin-bottom: 2rem;
     }
-    .kurs-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 400; line-height: 1.2;
-      color: var(--stone); margin-bottom: 2.5rem;
+    .intro-block {
+      margin-bottom: 3rem;
     }
-    .kurs-title em { font-style: italic; color: var(--amber); }
+    .intro-block p {
+      font-size: 1.08rem;
+      line-height: 1.85;
+      margin-bottom: 1.1rem;
+      opacity: 0.85;
+    }
+    .intro-block p:last-child { margin-bottom: 0; }
 
-    .intro-text {
-      font-size: 1.05rem; line-height: 1.85;
-      color: var(--stone); opacity: 0.8;
-      margin-bottom: 1.2rem;
+    .anmelden-inline {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--amber); color: var(--paper);
+      padding: 0.55rem 1.3rem; border-radius: 2rem;
+      font-size: 0.85rem; text-decoration: none;
+      transition: background 0.2s; margin: 0.3rem 0;
+      white-space: nowrap;
     }
-    .intro-text p { margin-bottom: 1.2rem; }
-    .intro-text p:last-child { margin-bottom: 0; }
+    .anmelden-inline:hover { background: var(--stone); }
+    .anmelden-inline::after { content: '→'; }
 
     /* ── DIVIDER ── */
     .divider {
       border: none;
       border-top: 1px solid var(--mist);
-      margin: 3.5rem 0;
+      margin: 3rem 0;
     }
 
-    /* ── SECTION ── */
-    .section-label {
-      font-size: 0.68rem; letter-spacing: 0.2em;
+    /* ── ABOUT ── */
+    .about-label {
+      font-size: 0.68rem; letter-spacing: 0.18em;
       text-transform: uppercase; color: var(--sage);
-      display: block; margin-bottom: 1.5rem;
+      display: block; margin-bottom: 1.2rem;
     }
-    .section-title {
+    .about-text p {
+      font-size: 0.97rem; line-height: 1.85;
+      opacity: 0.72; margin-bottom: 1rem;
+    }
+    .about-text p:last-child { margin-bottom: 0; }
+    .about-text strong { font-weight: 400; opacity: 1; color: var(--stone); }
+
+    /* ── KURS ── */
+    .kurs-title {
       font-family: 'Playfair Display', serif;
-      font-size: 1.5rem; font-weight: 400;
+      font-size: 1.4rem; font-weight: 400;
       margin-bottom: 1.2rem; line-height: 1.3;
     }
-    .body-text {
+    .kurs-body {
       font-size: 0.95rem; line-height: 1.85;
-      opacity: 0.7; margin-bottom: 1rem;
+      opacity: 0.7; margin-bottom: 2rem;
     }
 
-    /* ── WOCHEN ── */
     .wochen {
-      display: flex; flex-direction: column;
-      gap: 0; margin-top: 1.5rem;
       border-top: 1px solid var(--mist);
+      margin-bottom: 2rem;
     }
     .woche {
-      display: grid; grid-template-columns: 3rem 1fr;
-      gap: 1.5rem; padding: 1.5rem 0;
+      display: grid; grid-template-columns: 2.5rem 1fr;
+      gap: 1.2rem; padding: 1.2rem 0;
       border-bottom: 1px solid var(--mist);
       align-items: start;
     }
     .woche-num {
       font-family: 'Playfair Display', serif;
-      font-size: 1.1rem; color: var(--amber);
-      opacity: 0.6; padding-top: 0.1rem;
+      font-size: 1rem; color: var(--amber);
+      opacity: 0.5; padding-top: 0.1rem;
     }
-    .woche-content {}
     .woche-title {
-      font-weight: 400; margin-bottom: 0.3rem;
-      font-size: 0.95rem;
+      font-size: 0.92rem; font-weight: 400;
+      margin-bottom: 0.2rem;
     }
     .woche-desc {
-      font-size: 0.85rem; opacity: 0.55; line-height: 1.65;
+      font-size: 0.82rem; opacity: 0.5; line-height: 1.6;
     }
 
-    /* ── META ── */
     .meta-block {
       background: var(--linen);
-      border-radius: 1rem; padding: 2rem;
-      display: flex; flex-direction: column; gap: 1rem;
-      margin-top: 1.5rem;
+      border-radius: 0.8rem; padding: 1.5rem 1.8rem;
+      display: flex; flex-direction: column; gap: 0.7rem;
     }
     .meta-row {
-      display: flex; gap: 1rem; align-items: baseline;
-      font-size: 0.88rem;
+      display: flex; gap: 1rem;
+      font-size: 0.85rem; align-items: baseline;
     }
     .meta-key {
-      opacity: 0.45; min-width: 100px;
-      font-size: 0.75rem; letter-spacing: 0.06em;
-      text-transform: uppercase;
+      opacity: 0.4; min-width: 110px;
+      font-size: 0.72rem; letter-spacing: 0.06em;
+      text-transform: uppercase; flex-shrink: 0;
     }
-    .meta-val { opacity: 0.8; }
+    .meta-val { opacity: 0.75; }
 
-    /* ── ABOUT ── */
-    .about-block {
-      font-size: 0.95rem; line-height: 1.85; opacity: 0.7;
-    }
-
-    /* ── ANMELDUNG ── */
+    /* ── FORM ── */
     .form-intro {
-      font-size: 0.95rem; line-height: 1.8; opacity: 0.7;
-      margin-bottom: 2rem;
+      font-size: 0.95rem; line-height: 1.8;
+      opacity: 0.65; margin-bottom: 1.8rem;
     }
-    .field { margin-bottom: 1rem; }
+    .field { margin-bottom: 0.9rem; }
     .field label {
-      display: block; font-size: 0.72rem;
+      display: block; font-size: 0.7rem;
       letter-spacing: 0.1em; text-transform: uppercase;
-      opacity: 0.45; margin-bottom: 0.4rem;
+      opacity: 0.4; margin-bottom: 0.35rem;
     }
     .field input, .field textarea {
-      width: 100%; padding: 0.8rem 1rem;
+      width: 100%; padding: 0.75rem 1rem;
       border: 1px solid var(--mist);
       border-radius: 0.5rem;
       background: var(--linen);
@@ -179,44 +192,42 @@
     .form-btn {
       background: var(--stone); color: var(--paper);
       border: none; padding: 0.85rem 2rem;
-      border-radius: 2rem; font-family: 'Inter', sans-serif;
+      border-radius: 2rem;
+      font-family: 'Inter', sans-serif;
       font-size: 0.88rem; cursor: pointer;
-      transition: background 0.25s; margin-top: 0.5rem;
+      transition: background 0.25s; margin-top: 0.3rem;
     }
     .form-btn:hover { background: var(--sage); }
     .form-note {
-      font-size: 0.72rem; opacity: 0.35;
-      margin-top: 0.8rem; line-height: 1.6;
+      font-size: 0.7rem; opacity: 0.3;
+      margin-top: 0.7rem; line-height: 1.6;
     }
 
     /* ── FOOTER ── */
     .site-footer {
       border-top: 1px solid var(--mist);
-      padding: 2rem;
+      padding: 1.8rem 2.5rem;
       display: flex; justify-content: space-between;
-      font-size: 0.75rem; opacity: 0.35;
+      font-size: 0.72rem; opacity: 0.3;
     }
     .site-footer a {
       color: var(--stone); text-decoration: none;
-      transition: opacity 0.2s;
     }
-    .site-footer a:hover { opacity: 0.8; }
     .footer-links { display: flex; gap: 1.5rem; }
 
     @media (max-width: 600px) {
-      .site-header { padding: 1.2rem 1.5rem; }
+      .site-header { padding: 1.1rem 1.5rem; }
       .page { padding: 3rem 1.5rem 6rem; }
-      .site-footer { flex-direction: column; gap: 1rem; }
+      .site-footer { flex-direction: column; gap: 1rem; padding: 1.5rem; }
     }
   </style>
 </head>
 <body>
 
 <header class="site-header">
-  <a class="site-name" href="#">Achtsamkeit Lernen</a>
+  <a class="site-name" href="#">Achtsamkeit & Meditation Lernen</a>
   <nav class="site-nav">
     <a href="#kurs">Der Kurs</a>
-    <a href="#about">Über mich</a>
     <a href="#anmeldung">Anmelden</a>
   </nav>
 </header>
@@ -224,72 +235,76 @@
 <main class="page">
 
   <!-- INTRO -->
-  <span class="kurs-label">Anfängerkurs · Online · 4 Wochen</span>
-  <h1 class="kurs-title">Achtsam im<br><em>Gedankenkarussell.</em></h1>
+  <span class="greeting">Hallo, schön dass du hier bist</span>
 
-  <div class="intro-text">
-    <p>Viel im Kopf — das kennen die meisten. Was weniger bekannt ist: der Weg raus geht nicht über mehr Kontrolle…</p>
-    <p>Sondern mit Freundlichkeit und Zuwendung für das, was du gerade erlebst. Klingt auf den ersten Blick etwas komisch. Fühlt sich (mit etwas Übung) aber überraschend erleichternd an. Und das ist lernbar.</p>
+  <div class="intro-block">
+    <p>Diese Seite ist für dich, wenn du immer wieder bemerkst: „Ich bin zu viel im Kopf" — und nicht so genau weißt, wie das anders gehen könnte.</p>
+    <p>Ich biete bald einen Achtsamkeitskurs für Anfänger an, der dir Schritt für Schritt zeigt, wie du aus dem Gedankenkarussell aussteigen kannst und sanft mit dir in Verbindung kommst.</p>
+    <p>Falls du mitmachen möchtest: <a href="#anmeldung" class="anmelden-inline">Jetzt eintragen</a></p>
   </div>
+
+  <hr class="divider">
+
+  <!-- ABOUT -->
+  <section id="about">
+    <span class="about-label">Kurz zu mir</span>
+    <div class="about-text">
+      <p><strong>Ich bin Steffen,</strong> und habe jahrelang versucht Meditation zu lernen — ohne wirkliche Erfolge und dafür mit viel Frust.</p>
+      <p>Erst als ich Achtsamkeit auf pragmatische Weise kennengelernt habe, hat sich wirklich etwas verändert. Hinschauen und zulassen was auftaucht. Mit Geduld und Freundlichkeit mir selbst gegenüber. Das war der Wendepunkt.</p>
+      <p style="opacity:0.4;font-style:italic;">[Platzhalter: Meditation ist das Training, das hilft, im Alltag Achtsamkeitsskills umzusetzen.]</p>
+      <p>Dadurch wurde Meditieren nicht mehr eine Aufgabe, die ich „abhaken" musste. Sondern eine neue Chance, mit mir und der Welt neu und frisch in Kontakt zu kommen. Herauszufinden, was jetzt gerade wirklich wichtig ist.</p>
+      <p>Die Prinzipien dahinter sind eigentlich einfach. Vor allem, wenn wir sie einmal wirklich verstanden haben. Und gleichzeitig sind unsere Köpfe so daran gewöhnt, die Dinge zu verkomplizieren und zu zerdenken. Das hat mich jedenfalls jahrelang auf Umwege gebracht.</p>
+      <p>Damit du nicht die gleichen Umwege machen musst, habe ich diesen Kurs entwickelt.</p>
+    </div>
+  </section>
 
   <hr class="divider">
 
   <!-- KURS -->
   <section id="kurs">
-    <span class="section-label">Der Kurs</span>
-    <h2 class="section-title">Was dich erwartet</h2>
-    <p class="body-text">
-      Vier Sessions, eine pro Woche, je 90 Minuten via Zoom. Kleine Gruppe. Theorie, Übung und gemeinsamer Austausch — aufeinander aufbauend.
-    </p>
+    <span class="about-label">Der Kurs</span>
+    <h2 class="kurs-title">Was dich erwartet</h2>
+    <p class="kurs-body">In aufeinander aufbauenden Modulen gehen wir gemeinsam und Schritt für Schritt durch einfache Konzepte und Techniken, und bauen das Vertrauen auf, die Gedankenspiralen loszulassen und die Vielfalt der Gegenwart zu entdecken.</p>
+    <p class="kurs-body">Jede Session verbindet kurze Theorie mit praktischen Übungen und gemeinsamem Austausch. Du bekommst auch einfache geführte Meditationen und Übungen für zu Hause — nicht als Hausaufgabe, sondern als Einladung zum Experimentieren.</p>
 
     <div class="wochen">
       <div class="woche">
         <div class="woche-num">01</div>
-        <div class="woche-content">
-          <div class="woche-title">Ankommen im Moment</div>
-          <div class="woche-desc">Was Achtsamkeit wirklich ist — und was nicht. Erste Übungen mit dem Atem als Anker.</div>
+        <div>
+          <div class="woche-title">Auf in die Gegenwart. Aber wie?</div>
+          <div class="woche-desc"></div>
         </div>
       </div>
       <div class="woche">
         <div class="woche-num">02</div>
-        <div class="woche-content">
-          <div class="woche-title">Den Körper hören</div>
-          <div class="woche-desc">Körperempfindungen als Informationsquelle. Body Scan und achtsames Bewegen.</div>
+        <div>
+          <div class="woche-title">Der eigenen Erfahrung mit Freundlichkeit begegnen</div>
+          <div class="woche-desc"></div>
         </div>
       </div>
       <div class="woche">
         <div class="woche-num">03</div>
-        <div class="woche-content">
-          <div class="woche-title">Mit Gedanken umgehen</div>
-          <div class="woche-desc">Gedanken sind nicht Fakten. Wie du Abstand gewinnst ohne wegzulaufen.</div>
+        <div>
+          <div class="woche-title">Anfreunden mit Körper und Geist</div>
+          <div class="woche-desc"></div>
         </div>
       </div>
       <div class="woche">
         <div class="woche-num">04</div>
-        <div class="woche-content">
-          <div class="woche-title">Im Alltag bleiben</div>
-          <div class="woche-desc">Achtsamkeit in kleinen Momenten. Wie du die Praxis langfristig hältst.</div>
+        <div>
+          <div class="woche-title">Von der Übung ins Leben</div>
+          <div class="woche-desc"></div>
         </div>
       </div>
     </div>
 
     <div class="meta-block">
       <div class="meta-row"><span class="meta-key">Format</span><span class="meta-val">4 Sessions · 1× pro Woche · 90 Min</span></div>
+      <div class="meta-row"><span class="meta-key">Termine</span><span class="meta-val">5.08. · 12.08. · 19.08. · 26.08.</span></div>
       <div class="meta-row"><span class="meta-key">Ort</span><span class="meta-val">Online via Zoom</span></div>
-      <div class="meta-row"><span class="meta-key">Gruppe</span><span class="meta-val">Klein — für echten Austausch</span></div>
+      <div class="meta-row"><span class="meta-key">Gruppe</span><span class="meta-val">Max. 10 Personen</span></div>
       <div class="meta-row"><span class="meta-key">Vorkenntnisse</span><span class="meta-val">Keine nötig</span></div>
-      <div class="meta-row"><span class="meta-key">Preis</span><span class="meta-val">Platzhalter</span></div>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <!-- ABOUT -->
-  <section id="about">
-    <span class="section-label">Über mich</span>
-    <h2 class="section-title">Platzhalter — wer bist du?</h2>
-    <div class="about-block">
-      <p class="body-text">Hier kommt dein Text. Ehrlich, persönlich, ohne Guru-Pose. Was bringt dich zu diesem Thema, was hast du selbst erlebt, warum gibst du diesen Kurs.</p>
+      <div class="meta-row"><span class="meta-key">Inklusive</span><span class="meta-val">Geführte Meditationen als Audio & Übungen für zu Hause</span></div>
     </div>
   </section>
 
@@ -297,9 +312,8 @@
 
   <!-- ANMELDUNG -->
   <section id="anmeldung">
-    <span class="section-label">Anmeldung</span>
-    <h2 class="section-title">Interesse?</h2>
-    <p class="form-intro">Trag dich ein — ich melde mich mit Terminen, Preis und allen weiteren Infos. Kein Spam, keine Weitergabe deiner Daten.</p>
+    <span class="about-label">Anmeldung</span>
+    <p class="form-intro">Trag dich ein — ich melde mich mit Terminen und allen weiteren Infos. Kein Spam, keine Weitergabe deiner Daten.</p>
 
     <form name="anmeldung" method="POST" netlify netlify-honeypot="bot-field" action="/danke-achtsamkeit.html">
       <input type="hidden" name="form-name" value="anmeldung">
