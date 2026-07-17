@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Achtsamkeit Lernen – Anfängerkurs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --sage:    #7A9E87;
+      --amber:   #C8894A;
+      --stone:   #2E2A25;
+      --linen:   #F5F0E8;
+      --paper:   #FDFAF5;
+      --mist:    #DDD8CF;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--paper);
+      color: var(--stone);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    /* ── LAYOUT ── */
+    .page {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 5rem 2rem 8rem;
+    }
+
+    /* ── HEADER ── */
+    .site-header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--mist);
+      position: sticky; top: 0;
+      background: rgba(253,250,245,0.95);
+      backdrop-filter: blur(8px);
+      z-index: 10;
+    }
+    .site-name {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem; letter-spacing: 0.12em;
+      text-transform: uppercase; opacity: 0.5;
+      text-decoration: none; color: var(--stone);
+    }
+    .site-nav { display: flex; gap: 2rem; }
+    .site-nav a {
+      font-size: 0.82rem; opacity: 0.45;
+      text-decoration: none; color: var(--stone);
+      transition: opacity 0.2s;
+    }
+    .site-nav a:hover { opacity: 1; }
+
+    /* ── INTRO ── */
+    .kurs-label {
+      font-size: 0.72rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--sage);
+      display: block; margin-bottom: 2.5rem;
+    }
+    .kurs-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400; line-height: 1.2;
+      color: var(--stone); margin-bottom: 2.5rem;
+    }
+    .kurs-title em { font-style: italic; color: var(--amber); }
+
+    .intro-text {
+      font-size: 1.05rem; line-height: 1.85;
+      color: var(--stone); opacity: 0.8;
+      margin-bottom: 1.2rem;
+    }
+    .intro-text p { margin-bottom: 1.2rem; }
+    .intro-text p:last-child { margin-bottom: 0; }
+
+    /* ── DIVIDER ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--mist);
+      margin: 3.5rem 0;
+    }
+
+    /* ── SECTION ── */
+    .section-label {
+      font-size: 0.68rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--sage);
+      display: block; margin-bottom: 1.5rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem; font-weight: 400;
+      margin-bottom: 1.2rem; line-height: 1.3;
+    }
+    .body-text {
+      font-size: 0.95rem; line-height: 1.85;
+      opacity: 0.7; margin-bottom: 1rem;
+    }
+
+    /* ── WOCHEN ── */
+    .wochen {
+      display: flex; flex-direction: column;
+      gap: 0; margin-top: 1.5rem;
+      border-top: 1px solid var(--mist);
+    }
+    .woche {
+      display: grid; grid-template-columns: 3rem 1fr;
+      gap: 1.5rem; padding: 1.5rem 0;
+      border-bottom: 1px solid var(--mist);
+      align-items: start;
+    }
+    .woche-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; color: var(--amber);
+      opacity: 0.6; padding-top: 0.1rem;
+    }
+    .woche-content {}
+    .woche-title {
+      font-weight: 400; margin-bottom: 0.3rem;
+      font-size: 0.95rem;
+    }
+    .woche-desc {
+      font-size: 0.85rem; opacity: 0.55; line-height: 1.65;
+    }
+
+    /* ── META ── */
+    .meta-block {
+      background: var(--linen);
+      border-radius: 1rem; padding: 2rem;
+      display: flex; flex-direction: column; gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .meta-row {
+      display: flex; gap: 1rem; align-items: baseline;
+      font-size: 0.88rem;
+    }
+    .meta-key {
+      opacity: 0.45; min-width: 100px;
+      font-size: 0.75rem; letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .meta-val { opacity: 0.8; }
+
+    /* ── ABOUT ── */
+    .about-block {
+      font-size: 0.95rem; line-height: 1.85; opacity: 0.7;
+    }
+
+    /* ── ANMELDUNG ── */
+    .form-intro {
+      font-size: 0.95rem; line-height: 1.8; opacity: 0.7;
+      margin-bottom: 2rem;
+    }
+    .field { margin-bottom: 1rem; }
+    .field label {
+      display: block; font-size: 0.72rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      opacity: 0.45; margin-bottom: 0.4rem;
+    }
+    .field input, .field textarea {
+      width: 100%; padding: 0.8rem 1rem;
+      border: 1px solid var(--mist);
+      border-radius: 0.5rem;
+      background: var(--linen);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem; color: var(--stone);
+      outline: none; transition: border-color 0.2s;
+    }
+    .field input:focus, .field textarea:focus {
+      border-color: var(--sage);
+    }
+    .form-btn {
+      background: var(--stone); color: var(--paper);
+      border: none; padding: 0.85rem 2rem;
+      border-radius: 2rem; font-family: 'Inter', sans-serif;
+      font-size: 0.88rem; cursor: pointer;
+      transition: background 0.25s; margin-top: 0.5rem;
+    }
+    .form-btn:hover { background: var(--sage); }
+    .form-note {
+      font-size: 0.72rem; opacity: 0.35;
+      margin-top: 0.8rem; line-height: 1.6;
+    }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      border-top: 1px solid var(--mist);
+      padding: 2rem;
+      display: flex; justify-content: space-between;
+      font-size: 0.75rem; opacity: 0.35;
+    }
+    .site-footer a {
+      color: var(--stone); text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .site-footer a:hover { opacity: 0.8; }
+    .footer-links { display: flex; gap: 1.5rem; }
+
+    @media (max-width: 600px) {
+      .site-header { padding: 1.2rem 1.5rem; }
+      .page { padding: 3rem 1.5rem 6rem; }
+      .site-footer { flex-direction: column; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="site-name" href="#">Achtsamkeit Lernen</a>
+  <nav class="site-nav">
+    <a href="#kurs">Der Kurs</a>
+    <a href="#about">Über mich</a>
+    <a href="#anmeldung">Anmelden</a>
+  </nav>
+</header>
+
+<main class="page">
+
+  <!-- INTRO -->
+  <span class="kurs-label">Anfängerkurs · Online · 4 Wochen</span>
+  <h1 class="kurs-title">Achtsam im<br><em>Gedankenkarussell.</em></h1>
+
+  <div class="intro-text">
+    <p>Viel im Kopf — das kennen die meisten. Was weniger bekannt ist: der Weg raus geht nicht über mehr Kontrolle…</p>
+    <p>Sondern mit Freundlichkeit und Zuwendung für das, was du gerade erlebst. Klingt auf den ersten Blick etwas komisch. Fühlt sich (mit etwas Übung) aber überraschend erleichternd an. Und das ist lernbar.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- KURS -->
+  <section id="kurs">
+    <span class="section-label">Der Kurs</span>
+    <h2 class="section-title">Was dich erwartet</h2>
+    <p class="body-text">
+      Vier Sessions, eine pro Woche, je 90 Minuten via Zoom. Kleine Gruppe. Theorie, Übung und gemeinsamer Austausch — aufeinander aufbauend.
+    </p>
+
+    <div class="wochen">
+      <div class="woche">
+        <div class="woche-num">01</div>
+        <div class="woche-content">
+          <div class="woche-title">Ankommen im Moment</div>
+          <div class="woche-desc">Was Achtsamkeit wirklich ist — und was nicht. Erste Übungen mit dem Atem als Anker.</div>
+        </div>
+      </div>
+      <div class="woche">
+        <div class="woche-num">02</div>
+        <div class="woche-content">
+          <div class="woche-title">Den Körper hören</div>
+          <div class="woche-desc">Körperempfindungen als Informationsquelle. Body Scan und achtsames Bewegen.</div>
+        </div>
+      </div>
+      <div class="woche">
+        <div class="woche-num">03</div>
+        <div class="woche-content">
+          <div class="woche-title">Mit Gedanken umgehen</div>
+          <div class="woche-desc">Gedanken sind nicht Fakten. Wie du Abstand gewinnst ohne wegzulaufen.</div>
+        </div>
+      </div>
+      <div class="woche">
+        <div class="woche-num">04</div>
+        <div class="woche-content">
+          <div class="woche-title">Im Alltag bleiben</div>
+          <div class="woche-desc">Achtsamkeit in kleinen Momenten. Wie du die Praxis langfristig hältst.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="meta-block">
+      <div class="meta-row"><span class="meta-key">Format</span><span class="meta-val">4 Sessions · 1× pro Woche · 90 Min</span></div>
+      <div class="meta-row"><span class="meta-key">Ort</span><span class="meta-val">Online via Zoom</span></div>
+      <div class="meta-row"><span class="meta-key">Gruppe</span><span class="meta-val">Klein — für echten Austausch</span></div>
+      <div class="meta-row"><span class="meta-key">Vorkenntnisse</span><span class="meta-val">Keine nötig</span></div>
+      <div class="meta-row"><span class="meta-key">Preis</span><span class="meta-val">Platzhalter</span></div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ABOUT -->
+  <section id="about">
+    <span class="section-label">Über mich</span>
+    <h2 class="section-title">Platzhalter — wer bist du?</h2>
+    <div class="about-block">
+      <p class="body-text">Hier kommt dein Text. Ehrlich, persönlich, ohne Guru-Pose. Was bringt dich zu diesem Thema, was hast du selbst erlebt, warum gibst du diesen Kurs.</p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ANMELDUNG -->
+  <section id="anmeldung">
+    <span class="section-label">Anmeldung</span>
+    <h2 class="section-title">Interesse?</h2>
+    <p class="form-intro">Trag dich ein — ich melde mich mit Terminen, Preis und allen weiteren Infos. Kein Spam, keine Weitergabe deiner Daten.</p>
+
+    <form name="anmeldung" method="POST" netlify netlify-honeypot="bot-field" action="/danke-achtsamkeit.html">
+      <input type="hidden" name="form-name" value="anmeldung">
+      <p style="display:none"><input name="bot-field"></p>
+      <div class="field">
+        <label>Name</label>
+        <input type="text" name="name" placeholder="Dein Name">
+      </div>
+      <div class="field">
+        <label>E-Mail *</label>
+        <input type="email" name="email" placeholder="du@beispiel.de" required>
+      </div>
+      <div class="field">
+        <label>Was bringt dich hierher? (optional)</label>
+        <textarea name="nachricht" rows="3" placeholder="Ein paar Worte …"></textarea>
+      </div>
+      <button type="submit" class="form-btn">Eintragen →</button>
+      <p class="form-note">Keine Weitergabe deiner Daten. Kein Spam.</p>
+    </form>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <span>© 2026 Achtsamkeit Lernen</span>
+  <div class="footer-links">
+    <a href="#">Datenschutz</a>
+    <a href="#">Impressum</a>
+    <a href="#">Kontakt</a>
+  </div>
+</footer>
+
+</body>
+</html>
