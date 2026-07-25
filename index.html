@@ -132,22 +132,33 @@
       margin-bottom: 2rem;
     }
     .woche {
-      display: grid; grid-template-columns: 2.5rem 1fr;
-      gap: 1.2rem; padding: 1.2rem 0;
+      padding: 1.2rem 0;
       border-bottom: 1px solid var(--mist);
-      align-items: start;
     }
-    .woche-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem; color: var(--amber);
-      opacity: 0.5; padding-top: 0.1rem;
+    .woche-header {
+      display: grid; grid-template-columns: 2.5rem 1fr auto;
+      gap: 1.2rem; align-items: center; cursor: pointer;
     }
-    .woche-title {
-      font-size: 0.92rem; font-weight: 400;
-      margin-bottom: 0.2rem;
+    .woche-thumb {
+      width: 80px; height: 80px;
+      background: var(--linen);
+      border-radius: 0.5rem;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.65rem; opacity: 0.4; letter-spacing: 0.06em;
+      text-transform: uppercase; margin: 0.8rem 0 0.6rem;
+      color: var(--stone); flex-shrink: 0;
     }
-    .woche-desc {
-      font-size: 0.82rem; opacity: 0.5; line-height: 1.6;
+    .woche-toggle-btn {
+      background: none; border: none; cursor: pointer;
+      color: var(--sage); font-size: 0.8rem;
+      font-family: 'Inter', sans-serif;
+      padding: 0; opacity: 0.7; white-space: nowrap;
+    }
+    .woche-details {
+      display: none;
+      font-size: 0.85rem; line-height: 1.7;
+      opacity: 0.6; padding: 0.8rem 0 0.4rem;
+      padding-left: 3.7rem;
     }
 
     .meta-block {
@@ -235,12 +246,13 @@
 <main class="page">
 
   <!-- INTRO -->
+  <h1 style="font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,3rem); font-weight:400; line-height:1.2; margin-bottom:0.8rem;">Verkörpert im Gedankenkarussell</h1>
+  <p style="font-size:1rem; opacity:0.6; margin-bottom:2.5rem; line-height:1.7;">Wie du lernst mit Achtsamkeit aus Gedankenkreisen auszusteigen und in dir ein zu Hause findest.</p>
   <span class="greeting">Hallo, schön dass du hier bist</span>
 
   <div class="intro-block">
-    <p>Diese Seite ist für dich, wenn du immer wieder bemerkst: „Ich bin zu viel im Kopf" — und nicht so genau weißt, wie das anders gehen könnte.</p>
-    <p>Ich biete bald einen Achtsamkeitskurs für Anfänger an, der dir Schritt für Schritt zeigt, wie du aus dem Gedankenkarussell aussteigen kannst und sanft mit dir in Verbindung kommst.</p>
-    <p>Falls du mitmachen möchtest: <a href="#anmeldung" class="anmelden-inline">Jetzt eintragen</a></p>
+    <p>Hier biete ich einen Achtsamkeitskurs für Anfänger an, der dir Schritt für Schritt zeigt, wie du aus dem Gedankenkarussell aussteigen kannst und sanft mit dir in Verbindung kommst.</p>
+    <p><a href="#kurs" class="anmelden-inline">Mehr Infos zum Kurs</a></p>
   </div>
 
   <hr class="divider">
@@ -251,9 +263,21 @@
     <div class="about-text">
       <p><strong>Ich bin Steffen,</strong> und habe jahrelang versucht Meditation zu lernen — ohne wirkliche Erfolge und dafür mit viel Frust.</p>
       <p>Erst als ich Achtsamkeit auf pragmatische Weise kennengelernt habe, hat sich wirklich etwas verändert. Hinschauen und zulassen was auftaucht. Mit Geduld und Freundlichkeit mir selbst gegenüber — fundamentale Prinzipien der Achtsamkeit. Das gab mir eine entscheidende neue Ausrichtung und ich verstand, dass Meditation mir dabei hilft, diese Prinzipien im Alltag besser umsetzen zu können.</p>
-      <p>So entwickelte sich meine Meditationspraxis weg von einer Aufgabe, die ich täglich „abhaken" musste. Und hin zu einer neuen Chance, mit mir und der Welt neu und frisch in Kontakt zu kommen. Herauszufinden, was jetzt gerade wirklich wichtig ist.</p>
-      <p>Die Achtsamkeitsprinzipien sind eigentlich simpel. Vor allem, wenn wir sie einmal verstanden und an uns „erlebt" haben. Und gleichzeitig sind unsere Köpfe so daran gewöhnt, die Dinge zu verkomplizieren und zu zerdenken. Dieses „Verkopft-sein" hat mich selbst jahrelang auf Umwege gebracht, aber mich rückblickend auch sehr viel gelehrt.</p>
-      <p>Damit du nicht die gleichen Umwege machen musst — oder zumindest bewusster durch sie hindurchgehst — habe ich diesen Kurs entwickelt.</p>
+      <div id="about-more" style="display:none;">
+        <p>So entwickelte sich meine Meditationspraxis weg von einer Aufgabe, die ich täglich „abhaken" musste. Und hin zu einer neuen Chance, mit mir und der Welt neu und frisch in Kontakt zu kommen. Herauszufinden, was jetzt gerade wirklich wichtig ist.</p>
+        <p>Die Achtsamkeitsprinzipien sind eigentlich simpel. Vor allem, wenn wir sie einmal verstanden und an uns „erlebt" haben. Und gleichzeitig sind unsere Köpfe so daran gewöhnt, die Dinge zu verkomplizieren und zu zerdenken. Dieses „Verkopft-sein" hat mich selbst jahrelang auf Umwege gebracht, aber mich rückblickend auch sehr viel gelehrt.</p>
+        <p>Damit du nicht die gleichen Umwege machen musst — oder zumindest bewusster durch sie hindurchgehst — habe ich diesen Kurs entwickelt.</p>
+      </div>
+      <button onclick="toggleAbout()" id="about-toggle" style="
+        background: none; border: none; cursor: pointer;
+        color: var(--sage); font-family: 'Inter', sans-serif;
+        font-size: 0.82rem; padding: 0.6rem 0;
+        letter-spacing: 0.06em; margin-top: 0.5rem;
+        display: flex; align-items: center; gap: 0.4rem;
+        transition: opacity 0.2s; opacity: 0.8;
+      ">
+        <span id="toggle-label">Mehr lesen</span> <span id="toggle-arrow">↓</span>
+      </button>
     </div>
   </section>
 
@@ -263,43 +287,59 @@
   <section id="kurs">
     <span class="about-label">Der Kurs</span>
     <h2 class="kurs-title">Was dich erwartet</h2>
-    <p class="kurs-body">In aufeinander aufbauenden Modulen gehen wir gemeinsam und Schritt für Schritt durch einfache Konzepte und Techniken, und bauen das Vertrauen auf, die Gedankenspiralen loszulassen und die Vielfalt der Gegenwart zu entdecken.</p>
+    <p class="kurs-body">In aufeinander aufbauenden Modulen gehen wir gemeinsam und Schritt für Schritt durch einfache Konzepte und Techniken, und bauen die Skills und das Vertrauen auf, die Gedankenspiralen loszulassen und die Vielfalt der Gegenwart zu entdecken.</p>
     <p class="kurs-body">Jede Session verbindet kurze Theorie mit praktischen Übungen und gemeinsamem Austausch. Du bekommst auch einfache geführte Meditationen und Übungen für zu Hause — nicht als Hausaufgabe, sondern als Einladung zum Experimentieren.</p>
 
     <div class="wochen">
       <div class="woche">
-        <div class="woche-num">01</div>
-        <div>
-          <div class="woche-title">Auf in die Gegenwart. Aber wie?</div>
-          <div class="woche-desc"></div>
+        <div class="woche-header">
+          <div class="woche-num">01</div>
+          <div class="woche-title">Zugang zur Gegenwart finden</div>
+          <button class="woche-toggle-btn" onclick="toggleWoche('w1', this)">Mehr ↓</button>
+        </div>
+        <div class="woche-thumb">Thumbnail Platzhalter</div>
+        <div class="woche-details" id="w1">
+          Platzhalter: Was erwartet die Teilnehmenden in dieser Session? Welche Konzepte, welche Übungen, was nehmen sie mit?
         </div>
       </div>
       <div class="woche">
-        <div class="woche-num">02</div>
-        <div>
+        <div class="woche-header">
+          <div class="woche-num">02</div>
           <div class="woche-title">Der eigenen Erfahrung mit Freundlichkeit begegnen</div>
-          <div class="woche-desc"></div>
+          <button class="woche-toggle-btn" onclick="toggleWoche('w2', this)">Mehr ↓</button>
+        </div>
+        <div class="woche-thumb">Thumbnail Platzhalter</div>
+        <div class="woche-details" id="w2">
+          Platzhalter: Was erwartet die Teilnehmenden in dieser Session? Welche Konzepte, welche Übungen, was nehmen sie mit?
         </div>
       </div>
       <div class="woche">
-        <div class="woche-num">03</div>
-        <div>
-          <div class="woche-title">Anfreunden mit Körper und Geist</div>
-          <div class="woche-desc"></div>
+        <div class="woche-header">
+          <div class="woche-num">03</div>
+          <div class="woche-title">Emotionen und Gedanken — Teil von mir</div>
+          <button class="woche-toggle-btn" onclick="toggleWoche('w3', this)">Mehr ↓</button>
+        </div>
+        <div class="woche-thumb">Thumbnail Platzhalter</div>
+        <div class="woche-details" id="w3">
+          Platzhalter: Was erwartet die Teilnehmenden in dieser Session? Welche Konzepte, welche Übungen, was nehmen sie mit?
         </div>
       </div>
       <div class="woche">
-        <div class="woche-num">04</div>
-        <div>
-          <div class="woche-title">Von der Übung ins Leben</div>
-          <div class="woche-desc"></div>
+        <div class="woche-header">
+          <div class="woche-num">04</div>
+          <div class="woche-title">Ready für Achtsamkeitsmeditation</div>
+          <button class="woche-toggle-btn" onclick="toggleWoche('w4', this)">Mehr ↓</button>
+        </div>
+        <div class="woche-thumb">Thumbnail Platzhalter</div>
+        <div class="woche-details" id="w4">
+          Platzhalter: Was erwartet die Teilnehmenden in dieser Session? Welche Konzepte, welche Übungen, was nehmen sie mit?
         </div>
       </div>
     </div>
 
     <div class="meta-block">
       <div class="meta-row"><span class="meta-key">Format</span><span class="meta-val">4 Sessions · 1× pro Woche · 90 Min</span></div>
-      <div class="meta-row"><span class="meta-key">Termine</span><span class="meta-val">5.08. · 12.08. · 19.08. · 26.08.</span></div>
+      <div class="meta-row"><span class="meta-key">Termine</span><span class="meta-val">5.08. · 12.08. · 19.08. · 26.08. · 19:30–21:00 Uhr</span></div>
       <div class="meta-row"><span class="meta-key">Ort</span><span class="meta-val">Online via Zoom</span></div>
       <div class="meta-row"><span class="meta-key">Gruppe</span><span class="meta-val">Max. 10 Personen</span></div>
       <div class="meta-row"><span class="meta-key">Vorkenntnisse</span><span class="meta-val">Keine nötig</span></div>
@@ -345,5 +385,23 @@
   </div>
 </footer>
 
+<script>
+  function toggleAbout() {
+    const more = document.getElementById('about-more');
+    const label = document.getElementById('toggle-label');
+    const arrow = document.getElementById('toggle-arrow');
+    const isOpen = more.style.display === 'block';
+    more.style.display = isOpen ? 'none' : 'block';
+    label.textContent = isOpen ? 'Mehr lesen' : 'Weniger anzeigen';
+    arrow.textContent = isOpen ? '↓' : '↑';
+  }
+
+  function toggleWoche(id, btn) {
+    const el = document.getElementById(id);
+    const isOpen = el.style.display === 'block';
+    el.style.display = isOpen ? 'none' : 'block';
+    btn.textContent = isOpen ? 'Mehr ↓' : 'Weniger ↑';
+  }
+</script>
 </body>
 </html>
