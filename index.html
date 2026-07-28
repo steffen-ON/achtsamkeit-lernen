@@ -129,7 +129,7 @@
 
     .wochen {
       border-top: 1px solid var(--mist);
-      margin-bottom: 2rem;
+      margin-bottom: 0.5rem;
     }
     .woche {
       padding: 1.2rem 0;
@@ -247,39 +247,13 @@
 
   <!-- INTRO -->
   <h1 style="font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,3rem); font-weight:400; line-height:1.2; margin-bottom:0.8rem;">Verkörpert im Gedankenkarussell</h1>
-  <p style="font-size:1rem; opacity:0.6; margin-bottom:2.5rem; line-height:1.7;">Wie du lernst mit Achtsamkeit aus Gedankenkreisen auszusteigen und in dir ein zu Hause findest.</p>
+  <p style="font-size:1rem; opacity:0.6; margin-bottom:2.5rem; line-height:1.7;">Wie du lernst mit Achtsamkeit aus Gedankenkreisen auszusteigen und in dir ein Zuhause zu finden.</p>
   <span class="greeting">Hallo, schön dass du hier bist</span>
 
   <div class="intro-block">
-    <p>Hier biete ich einen Achtsamkeitskurs für Anfänger an, der dir Schritt für Schritt zeigt, wie du aus dem Gedankenkarussell aussteigen kannst und sanft mit dir in Verbindung kommst.</p>
+    <p>Hier biete ich einen <strong>Achtsamkeitskurs für Anfänger</strong> an, der dir Schritt für Schritt zeigt, wie du aus Gedankenkreisen aussteigen kannst und sanft mit dir in Verbindung kommst.</p>
     <p><a href="#kurs" class="anmelden-inline">Mehr Infos zum Kurs</a></p>
   </div>
-
-  <hr class="divider">
-
-  <!-- ABOUT -->
-  <section id="about">
-    <span class="about-label">Kurz zu mir</span>
-    <div class="about-text">
-      <p><strong>Ich bin Steffen,</strong> und habe jahrelang versucht Meditation zu lernen — ohne wirkliche Erfolge und dafür mit viel Frust.</p>
-      <p>Erst als ich Achtsamkeit auf pragmatische Weise kennengelernt habe, hat sich wirklich etwas verändert. Hinschauen und zulassen was auftaucht. Mit Geduld und Freundlichkeit mir selbst gegenüber — fundamentale Prinzipien der Achtsamkeit. Das gab mir eine entscheidende neue Ausrichtung und ich verstand, dass Meditation mir dabei hilft, diese Prinzipien im Alltag besser umsetzen zu können.</p>
-      <div id="about-more" style="display:none;">
-        <p>So entwickelte sich meine Meditationspraxis weg von einer Aufgabe, die ich täglich „abhaken" musste. Und hin zu einer neuen Chance, mit mir und der Welt neu und frisch in Kontakt zu kommen. Herauszufinden, was jetzt gerade wirklich wichtig ist.</p>
-        <p>Die Achtsamkeitsprinzipien sind eigentlich simpel. Vor allem, wenn wir sie einmal verstanden und an uns „erlebt" haben. Und gleichzeitig sind unsere Köpfe so daran gewöhnt, die Dinge zu verkomplizieren und zu zerdenken. Dieses „Verkopft-sein" hat mich selbst jahrelang auf Umwege gebracht, aber mich rückblickend auch sehr viel gelehrt.</p>
-        <p>Damit du nicht die gleichen Umwege machen musst — oder zumindest bewusster durch sie hindurchgehst — habe ich diesen Kurs entwickelt.</p>
-      </div>
-      <button onclick="toggleAbout()" id="about-toggle" style="
-        background: none; border: none; cursor: pointer;
-        color: var(--sage); font-family: 'Inter', sans-serif;
-        font-size: 0.82rem; padding: 0.6rem 0;
-        letter-spacing: 0.06em; margin-top: 0.5rem;
-        display: flex; align-items: center; gap: 0.4rem;
-        transition: opacity 0.2s; opacity: 0.8;
-      ">
-        <span id="toggle-label">Mehr lesen</span> <span id="toggle-arrow">↓</span>
-      </button>
-    </div>
-  </section>
 
   <hr class="divider">
 
@@ -287,55 +261,10 @@
   <section id="kurs">
     <span class="about-label">Der Kurs</span>
     <h2 class="kurs-title">Was dich erwartet</h2>
-    <p class="kurs-body">In aufeinander aufbauenden Modulen gehen wir gemeinsam und Schritt für Schritt durch einfache Konzepte und Techniken, und bauen die Skills und das Vertrauen auf, die Gedankenspiralen loszulassen und die Vielfalt der Gegenwart zu entdecken.</p>
-    <p class="kurs-body">Jede Session verbindet kurze Theorie mit praktischen Übungen und gemeinsamem Austausch. Du bekommst auch einfache geführte Meditationen und Übungen für zu Hause — nicht als Hausaufgabe, sondern als Einladung zum Experimentieren.</p>
+    <p class="kurs-body">In aufeinander aufbauenden Modulen gehen wir gemeinsam und Schritt für Schritt durch einfache Konzepte und Techniken, und bauen die Skills auf um Achtsamkeit effektiv im Alltag integrieren zu können.</p>
+    <p class="kurs-body">Jede Session verbindet kurze Theorie mit praktischen Übungen und gemeinsamem Austausch. Für die Zeit zwischen den Sessions bekommst du geführte Meditationen, die dich beim Entspannen und Integrieren unterstützen.</p>
 
-    <div class="wochen">
-      <div class="woche">
-        <div class="woche-header">
-          <div class="woche-num">01</div>
-          <div class="woche-title">Zugang zur Gegenwart finden</div>
-          <button class="woche-toggle-btn" onclick="toggleWoche('w1', this)">Mehr ↓</button>
-        </div>
-        <div class="woche-thumb">Thumbnail Platzhalter</div>
-        <div class="woche-details" id="w1">
-          Platzhalter: Was erwartet die Teilnehmenden in dieser Session? Welche Konzepte, welche Übungen, was nehmen sie mit?
-        </div>
-      </div>
-      <div class="woche">
-        <div class="woche-header">
-          <div class="woche-num">02</div>
-          <div class="woche-title">Der eigenen Erfahrung mit Freundlichkeit begegnen</div>
-          <button class="woche-toggle-btn" onclick="toggleWoche('w2', this)">Mehr ↓</button>
-        </div>
-        <div class="woche-thumb">Thumbnail Platzhalter</div>
-        <div class="woche-details" id="w2">
-          Platzhalter: Was erwartet die Teilnehmenden in dieser Session? Welche Konzepte, welche Übungen, was nehmen sie mit?
-        </div>
-      </div>
-      <div class="woche">
-        <div class="woche-header">
-          <div class="woche-num">03</div>
-          <div class="woche-title">Emotionen und Gedanken — Teil von mir</div>
-          <button class="woche-toggle-btn" onclick="toggleWoche('w3', this)">Mehr ↓</button>
-        </div>
-        <div class="woche-thumb">Thumbnail Platzhalter</div>
-        <div class="woche-details" id="w3">
-          Platzhalter: Was erwartet die Teilnehmenden in dieser Session? Welche Konzepte, welche Übungen, was nehmen sie mit?
-        </div>
-      </div>
-      <div class="woche">
-        <div class="woche-header">
-          <div class="woche-num">04</div>
-          <div class="woche-title">Ready für Achtsamkeitsmeditation</div>
-          <button class="woche-toggle-btn" onclick="toggleWoche('w4', this)">Mehr ↓</button>
-        </div>
-        <div class="woche-thumb">Thumbnail Platzhalter</div>
-        <div class="woche-details" id="w4">
-          Platzhalter: Was erwartet die Teilnehmenden in dieser Session? Welche Konzepte, welche Übungen, was nehmen sie mit?
-        </div>
-      </div>
-    </div>
+    <h3 style="font-family:'Playfair Display',serif; font-weight:400; font-size:1.2rem; margin: 2rem 0 1rem; opacity:0.7;">Auf einen Blick</h3>
 
     <div class="meta-block">
       <div class="meta-row"><span class="meta-key">Format</span><span class="meta-val">4 Sessions · 1× pro Woche · 90 Min</span></div>
@@ -345,14 +274,66 @@
       <div class="meta-row"><span class="meta-key">Vorkenntnisse</span><span class="meta-val">Keine nötig</span></div>
       <div class="meta-row"><span class="meta-key">Inklusive</span><span class="meta-val">Geführte Meditationen als Audio & Übungen für zu Hause</span></div>
     </div>
+
+    <h3 style="font-family:'Playfair Display',serif; font-weight:400; font-size:1.2rem; margin: 2.5rem 0 0.5rem; opacity:0.7;">Der Kurs im Detail</h3>
+
+    <div class="wochen">
+      <div class="woche">
+        <div class="woche-header">
+          <div class="woche-num">01</div>
+          <div class="woche-title">Zugänge zur Gegenwart finden</div>
+          <button class="woche-toggle-btn" onclick="toggleWoche('w1', this)">Mehr ↓</button>
+        </div>
+        <div class="woche-details" id="w1" style="display:none;">
+          <p>Zuerst definieren und entmystifizieren wir Achtsamkeit und klären:</p>
+          <ul style="margin: 0.6rem 0 0 1rem; display:flex; flex-direction:column; gap:0.4rem;">
+            <li>Welche „Skills" in der Achtsamkeitspraxis trainiert werden</li>
+            <li>Wie sie uns im Alltag unterstützen können</li>
+            <li>Körper und Atmung als Anker für die Gegenwart</li>
+            <li>Warum eine freundliche Haltung so hilfreich ist</li>
+            <li>Ausprobieren von einfachen Übungen</li>
+          </ul>
+        </div>
+      </div>
+      <div class="woche">
+        <div class="woche-header">
+          <div class="woche-num">02</div>
+          <div class="woche-title">Der eigenen Erfahrung mit Freundlichkeit begegnen</div>
+          <button class="woche-toggle-btn" onclick="toggleWoche('w2', this)">Mehr ↓</button>
+        </div>
+        <div class="woche-details" id="w2" style="display:none;">
+          In der 2. Session bauen wir die Fähigkeiten aus, freundlich und fürsorglich mit uns in Kontakt zu kommen. Dieser Skill ist die Basis für eine stärkende und wohltuende Achtsamkeitspraxis. Zusätzlich erkunden wir unsere Körperwahrnehmungen, die dabei unterstützen können, uns im Alltag zu regulieren und zu entspannen.
+        </div>
+      </div>
+      <div class="woche">
+        <div class="woche-header">
+          <div class="woche-num">03</div>
+          <div class="woche-title">Emotionen und Gedanken — Teile von mir</div>
+          <button class="woche-toggle-btn" onclick="toggleWoche('w3', this)">Mehr ↓</button>
+        </div>
+        <div class="woche-details" id="w3" style="display:none;">
+          In der 3. Session widmen wir uns spezieller den Emotionen und Gedanken und lernen mit ihnen bewusster umzugehen. Wir üben die RAIN-Technik — eine Methode, um mit schwierigen Emotionen achtsam in Verbindung zu kommen und Bedürfnisse dahinter zu erkennen.
+        </div>
+      </div>
+      <div class="woche" style="border-bottom:none;">
+        <div class="woche-header">
+          <div class="woche-num">04</div>
+          <div class="woche-title">Das große Ganze und der Alltag</div>
+          <button class="woche-toggle-btn" onclick="toggleWoche('w4', this)">Mehr ↓</button>
+        </div>
+        <div class="woche-details" id="w4" style="display:none;">
+          In Session 4 fügen wir alles Gelernte zusammen, üben die finale Achtsamkeitsmeditation und diskutieren, wie das Erlernte im Alltag Platz findet.
+        </div>
+      </div>
+    </div>
   </section>
 
-  <hr class="divider">
+  <hr class="divider" style="margin: 1.5rem 0;">
 
   <!-- ANMELDUNG -->
   <section id="anmeldung">
     <span class="about-label">Anmeldung</span>
-    <p class="form-intro">Trag dich ein — ich melde mich mit Terminen und allen weiteren Infos. Kein Spam, keine Weitergabe deiner Daten.</p>
+    <p class="form-intro">Trag dich hier ein, wenn du mitmachen möchtest — ich melde mich dann per E-Mail mit weiteren Infos inkl. dem Zoom Link. Deine Daten werden nicht weitergegeben und nur für Infos zu diesem Kurs benutzt.</p>
 
     <form name="anmeldung" method="POST" netlify netlify-honeypot="bot-field" action="/danke-achtsamkeit.html">
       <input type="hidden" name="form-name" value="anmeldung">
@@ -366,12 +347,44 @@
         <input type="email" name="email" placeholder="du@beispiel.de" required>
       </div>
       <div class="field">
-        <label>Was bringt dich hierher? (optional)</label>
+        <label>Hast du schon Erfahrungen mit Achtsamkeit oder Meditation gesammelt? (optional)</label>
         <textarea name="nachricht" rows="3" placeholder="Ein paar Worte …"></textarea>
       </div>
       <button type="submit" class="form-btn">Eintragen →</button>
-      <p class="form-note">Keine Weitergabe deiner Daten. Kein Spam.</p>
     </form>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ABOUT -->
+  <section id="about">
+    <span class="about-label">Kurz zu mir</span>
+    <div class="about-text">
+      <p><strong>Hallo — ich bin Steffen,</strong> und ich bin total fasziniert von Achtsamkeit, Meditation, und wie beide auf das Wohlbefinden von „verkopften" Menschen wirken. Denn ich drehe selbst oft ein paar extra Runden im Gedankenkarussell. Verschiedenste Variationen von „Was denken die anderen wohl über mich?", „Kann ich das wirklich?", „Wie wird es weitergehen?", „Hab ich was falsch gemacht?" — und viele andere Dinge schwirren mir oft im Kopf herum.</p>
+      <p>Vor einigen Jahren habe ich entdeckt, dass mir Meditation sehr dabei hilft, weniger in diesen Gedanken stecken zu bleiben. Und trotzdem fiel es mir total schwer, mir dafür Zeit zu nehmen und es wirklich für mich zu praktizieren.</p>
+      <div id="about-more" style="display:none;">
+        <p>Dann kam eine schwierige Zeit. Beruflich hatte ich es mit einem großen Projekt und einem neuen cholerischen Chef zu tun. Gleichzeitig war ich in einer Beziehung, die mich emotional sehr belastete. Das Gedankenkarussell lief auf Hochtouren — und meine herkömmlichen Strategien, um mit dem Stress umzugehen und diesen nicht wirklich zu spüren: Durchhalten, Zerdenken oder Hauptsache irgendwie Beschäftigt sein; funktionierten nicht mehr. Und wenn ich versuchte zu meditieren, was mein Rettungsanker war, wurde es nur schlimmer. Ganz schön schmerzhaft! Mir ist dabei eins aufgefallen: Meine Gedanken waren meine größten Kritiker. Als hätte ich ständig jemanden in meinem Kopf sitzen, dessen Aufgabe es wäre, mich zu kritisieren.</p>
+        <p>Unter den Gedanken und dem Schmerz fand ich eine tiefe Sehnsucht — nach innerer Freundschaft und einem liebevollen Umgang mit mir selbst.</p>
+        <p>Zeitgleich lernte ich das Mindful Self Compassion Programm von Kristin Neff kennen und den Achtsamkeitslehrer Jack Kornfield, bei dem ich zur Zeit in Ausbildung bin. Mindful Self Compassion, also Achtsames Selbstmitgefühl — ich weiß, ein ganz schön klobiges und beladenes Wort. Aber was dahintersteckt, hat für mich alles verändert.</p>
+        <p>Die grundlegende Erkenntnis, die ich in dieser schwierigen Zeit lernte, und die auch jetzt noch ein Nordstern für mich ist: <em>Mit mir, nicht gegen mich.</em></p>
+        <p>Achtsamkeit und Selbstmitgefühl helfen mir bewusst in den Kontakt mit den eigenen Werten und Bedürfnissen zu kommen. Es zeigt mir, dass ein anderer Umgang mit den eigenen Gedanken lernbar und gar nicht kompliziert sein muss. Der innere Kritiker wird leiser. Der innere Freund bekommt mehr Raum. Und es wächst das Vertrauen, auch in schwierigen Momenten mit meinen Empfindungen in Kontakt zu kommen. Die Herausforderungen werden dadurch nicht weniger, aber ich kann ganz anders mit ihnen umgehen. Manchmal gibt es schwerere Momente, manchmal leichtere. Aber eins ist deutlich: Der Alltag ist so viel genussvoller.</p>
+        <p>Dieser Genuss entsteht dadurch, dass ich nicht mehr ständig damit beschäftigt bin, besser werden zu müssen, oder Unangenehmes „weg zu meditieren". Viel mehr lerne ich das Hinschauen und Zulassen von dem, was auftaucht. Mit Geduld und Freundlichkeit mir selbst gegenüber.</p>
+        <p>Und die Basis dafür ist der eigene Körper. Behutsam meinen Körper neu zu entdecken und dessen Sprache wieder wahrzunehmen ist wie der sichere und weiche Boden, auf dem die Füße landen, wenn ich das Gedankenkarussell verlasse. Dort kann ich den Empfindungen des Körpers lauschen. So wie sie sind. Und lerne wieder mehr im Kontakt mit den ganz physischen Aspekten meiner Wünsche und Grenzen zu sein.</p>
+        <p>Und so entwickelt sich meine Achtsamkeitspraxis weg von einer Aufgabe, die ich täglich „abhaken" musste. Und hin zu einer neuen Chance, mit mir und der Welt frisch und ganz körperlich und sinnlich in Kontakt zu kommen. Herauszufinden, was jetzt gerade wirklich wichtig ist — anstatt ständig neue Gedankenkreise zu drehen.</p>
+        <p>Die Achtsamkeitsprinzipien sind eigentlich simpel. Vor allem, wenn sie einmal verstanden und in der Praxis „erlebt" werden. Und gleichzeitig sind unsere Köpfe so daran gewöhnt, die Dinge zu verkomplizieren. Dieses Verkopft-sein habe ich jahrelang versucht zu bekämpfen, ohne es zu merken — was mich auf viele Umwege gebracht hat und sehr lehrreich war.</p>
+        <p>Damit du nicht die gleichen Umwege machen musst — oder zumindest bewusster durch sie hindurchgehst — habe ich diesen Kurs entwickelt.</p>
+      </div>
+      <button onclick="toggleAbout()" id="about-toggle" style="
+        background: none; border: none; cursor: pointer;
+        color: var(--sage); font-family: 'Inter', sans-serif;
+        font-size: 0.82rem; padding: 0.6rem 0;
+        letter-spacing: 0.06em; margin-top: 0.5rem;
+        display: flex; align-items: center; gap: 0.4rem;
+        transition: opacity 0.2s; opacity: 0.8;
+      ">
+        <span id="toggle-label">Mehr lesen</span> <span id="toggle-arrow">↓</span>
+      </button>
+    </div>
   </section>
 
 </main>
