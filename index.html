@@ -138,6 +138,7 @@
     .woche-header {
       display: grid; grid-template-columns: 2.5rem 1fr auto;
       gap: 1.2rem; align-items: center; cursor: pointer;
+      user-select: none;
     }
     .woche-thumb {
       width: 80px; height: 80px;
@@ -246,7 +247,7 @@
 <main class="page">
 
   <!-- INTRO -->
-  <h1 style="font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,3rem); font-weight:400; line-height:1.2; margin-bottom:0.8rem;">Verkörpert im Gedankenkarussell</h1>
+  <h1 style="font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,3rem); font-weight:400; line-height:1.2; margin-bottom:0.8rem;">Achtsam raus aus dem Gedankenkarussell</h1>
   <p style="font-size:1rem; opacity:0.6; margin-bottom:2.5rem; line-height:1.7;">Wie du lernst mit Achtsamkeit aus Gedankenkreisen auszusteigen und in dir ein Zuhause zu finden.</p>
   <span class="greeting">Hallo, schön dass du hier bist</span>
 
@@ -279,10 +280,10 @@
 
     <div class="wochen">
       <div class="woche">
-        <div class="woche-header">
+        <div class="woche-header" onclick="toggleWoche('w1', this.querySelector('.woche-toggle-btn'))">
           <div class="woche-num">01</div>
           <div class="woche-title">Zugänge zur Gegenwart finden</div>
-          <button class="woche-toggle-btn" onclick="toggleWoche('w1', this)">Mehr ↓</button>
+          <button class="woche-toggle-btn">Mehr ↓</button>
         </div>
         <div class="woche-details" id="w1" style="display:none;">
           <p>Zuerst definieren und entmystifizieren wir Achtsamkeit und klären:</p>
@@ -296,30 +297,30 @@
         </div>
       </div>
       <div class="woche">
-        <div class="woche-header">
+        <div class="woche-header" onclick="toggleWoche('w2', this.querySelector('.woche-toggle-btn'))">
           <div class="woche-num">02</div>
           <div class="woche-title">Der eigenen Erfahrung mit Freundlichkeit begegnen</div>
-          <button class="woche-toggle-btn" onclick="toggleWoche('w2', this)">Mehr ↓</button>
+          <button class="woche-toggle-btn">Mehr ↓</button>
         </div>
         <div class="woche-details" id="w2" style="display:none;">
           In der 2. Session bauen wir die Fähigkeiten aus, freundlich und fürsorglich mit uns in Kontakt zu kommen. Dieser Skill ist die Basis für eine stärkende und wohltuende Achtsamkeitspraxis. Zusätzlich erkunden wir unsere Körperwahrnehmungen, die dabei unterstützen können, uns im Alltag zu regulieren und zu entspannen.
         </div>
       </div>
       <div class="woche">
-        <div class="woche-header">
+        <div class="woche-header" onclick="toggleWoche('w3', this.querySelector('.woche-toggle-btn'))">
           <div class="woche-num">03</div>
           <div class="woche-title">Emotionen und Gedanken — Teile von mir</div>
-          <button class="woche-toggle-btn" onclick="toggleWoche('w3', this)">Mehr ↓</button>
+          <button class="woche-toggle-btn">Mehr ↓</button>
         </div>
         <div class="woche-details" id="w3" style="display:none;">
           In der 3. Session widmen wir uns spezieller den Emotionen und Gedanken und lernen mit ihnen bewusster umzugehen. Wir üben die RAIN-Technik — eine Methode, um mit schwierigen Emotionen achtsam in Verbindung zu kommen und Bedürfnisse dahinter zu erkennen.
         </div>
       </div>
       <div class="woche" style="border-bottom:none;">
-        <div class="woche-header">
+        <div class="woche-header" onclick="toggleWoche('w4', this.querySelector('.woche-toggle-btn'))">
           <div class="woche-num">04</div>
           <div class="woche-title">Das große Ganze und der Alltag</div>
-          <button class="woche-toggle-btn" onclick="toggleWoche('w4', this)">Mehr ↓</button>
+          <button class="woche-toggle-btn">Mehr ↓</button>
         </div>
         <div class="woche-details" id="w4" style="display:none;">
           In Session 4 fügen wir alles Gelernte zusammen, üben die finale Achtsamkeitsmeditation und diskutieren, wie das Erlernte im Alltag Platz findet.
